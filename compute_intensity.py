@@ -57,7 +57,7 @@ B_opt      = option_B_opt(L, RegA4x1, RegN)
 B_restrict = option_B(L)
 
 LambdaM    = np.array([5, 6, 8, 8, 16])
-RegN       = np.array([4, 4, 3, 2, 1])
+RegN       = np.array([4, 4, 3, 3, 1])
 C_opt      = option_C_opt(L, 2, LambdaM, RegN)
 LambdaM    = np.array([4, 8, 8, 8, 16])
 RegN       = np.array([4, 2, 2, 2, 1])
@@ -73,18 +73,14 @@ M_restrict = np.array([4, 4, 2, 2, 1])
 N_restrict = np.array([4, 2, 2, 1, 1])
 E_restrict = option_E(L,M_restrict,N_restrict)
 
-#print("Option A/D(optimal):",A_D_opt)
-plt.plot(L, A_D_opt, label='Option A/D(optimal)', marker='o')
+#plt.plot(L, A_D_opt, label='Option A/D(optimal)', marker='o')
 #plt.plot(L, A_D_restrict, label='Option A/D(restrict)', marker='x')
 #plt.plot(L, A_D_fake, label='Option A/D(preliminary)', marker='o')
 
-#print("Option B(optimal):",B_opt)
-plt.plot(L, B_opt, label='Option B(optimal)', marker='^')
+#plt.plot(L, B_opt, label='Option B(optimal)', marker='^')
 #plt.plot(L, B_restrict, label='Option B(restrict)', marker='^')
 
 # Fix Alpha
-#print("Option C(alpha=2):",C_alpha2)
-#print("Option C(alpha=4):",C_alpha4)
 #plt.plot(L, C_alpha2, 'b-o', label='Option C(alpha=2)')
 #plt.plot(L, C_alpha4, 'r-o', label='Option C(alpha=4)')
 
@@ -92,10 +88,10 @@ plt.plot(L, B_opt, label='Option B(optimal)', marker='^')
 #print("Option C(new lemma):",C_opt)
 #print("Option C(legacy lemma):",C_restrict)
 plt.plot(L, C_opt, 'b-o', label='Option C(optimal)')
-#plt.plot(L, C_restrict, 'm-o', label='Option C(restrict)')
+plt.plot(L, C_restrict, 'm-o', label='Option C(restrict)')
 
 #print("Option E(optimal):",E_opt)
-plt.plot(L, E_opt, label='Option E(optimal)', marker='X')
+#plt.plot(L, E_opt, label='Option E(optimal)', marker='X')
 #plt.plot(L, E_restrict, label='Option E(restrict)', marker='+')
 
 plt.legend()
